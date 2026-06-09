@@ -1,0 +1,453 @@
+[
+    {
+        "id": "f155cd03a38d9f93",
+        "type": "discordMessage",
+        "z": "b652f1b6c9917e6b",
+        "name": "Bot1",
+        "channelIdFilter": "1493580445290463372",
+        "token": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "1e78caf7fbe8d532",
+                "d80e114ed8dd57d9",
+                "60bd7c715657a1fe",
+                "cf82df2a50584bb3",
+                "97cf9c0f86702680"
+            ]
+        ]
+    },
+    {
+        "id": "b0d8f583fd8d086d",
+        "type": "discordMessageManager",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "channel": "",
+        "token": "",
+        "x": 720,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e78caf7fbe8d532",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather rain",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "ef0a4b3a2627122b",
+                "6c8a4ce2cf75d92f"
+            ]
+        ]
+    },
+    {
+        "id": "ef0a4b3a2627122b",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now it's raining",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "9c1f7d3acfbf0aa4",
+        "type": "world",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "action": "weather",
+        "x": 730,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c8a4ce2cf75d92f",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "rain",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "6002ec3789fcb3cd",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sun is there!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "0475d8f386149a1e",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "clear",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "d80e114ed8dd57d9",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather clear",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "0475d8f386149a1e",
+                "6002ec3789fcb3cd"
+            ]
+        ]
+    },
+    {
+        "id": "60bd7c715657a1fe",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather thunder",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 240,
+        "wires": [
+            [
+                "05035d2f7f120698",
+                "cbe5f5d8a2cff610"
+            ]
+        ]
+    },
+    {
+        "id": "05035d2f7f120698",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "thunder",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "cbe5f5d8a2cff610",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "thunder is there",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "cf82df2a50584bb3",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!server status",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "5c354b702c45b28d"
+            ]
+        ]
+    },
+    {
+        "id": "5c354b702c45b28d",
+        "type": "serverinfo",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "6e908f638455f6d7"
+            ]
+        ]
+    },
+    {
+        "id": "6e908f638455f6d7",
+        "type": "template",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Server Status:\n Version: {{payload.version}}\n Online: {{payload.online}}/{{payload.max}}",
+        "output": "str",
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "97cf9c0f86702680",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!resetcoords",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "a240044cbf412a14"
+            ]
+        ]
+    },
+    {
+        "id": "a240044cbf412a14",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "teleport @a 0 100 0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "495ef1e07796ba78"
+            ]
+        ]
+    },
+    {
+        "id": "495ef1e07796ba78",
+        "type": "rcon",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "command": "",
+        "x": 570,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2252dcdfacb86e0",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Teleported all players to 0 0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 440,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "8578630036ab0527",
+        "type": "serverconfig",
+        "host": "minecraft",
+        "rconPort": 25575,
+        "rconPassword": "flip123"
+    },
+    {
+        "id": "bdd8c15b3f621771",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-discord-updated": "4.1.0",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]

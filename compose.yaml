@@ -17,7 +17,7 @@ services:
   nodered:
     image: nodered/node-red:latest
     environment:
-      - TZ=Europe/Luxembourg
+      - TZ=Europe/Luxembourg #your timezone
     ports:
       - "1880:1880"
     volumes:

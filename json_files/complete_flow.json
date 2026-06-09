@@ -1,0 +1,1303 @@
+[
+    {
+        "id": "b652f1b6c9917e6b",
+        "type": "tab",
+        "label": "TEINF Project",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f155cd03a38d9f93",
+        "type": "discordMessage",
+        "z": "b652f1b6c9917e6b",
+        "name": "Bot1",
+        "channelIdFilter": "1493580445290463372",
+        "token": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "1e78caf7fbe8d532",
+                "d80e114ed8dd57d9",
+                "60bd7c715657a1fe",
+                "cf82df2a50584bb3",
+                "97cf9c0f86702680"
+            ]
+        ]
+    },
+    {
+        "id": "b0d8f583fd8d086d",
+        "type": "discordMessageManager",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "channel": "",
+        "token": "",
+        "x": 720,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e78caf7fbe8d532",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather rain",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "ef0a4b3a2627122b",
+                "6c8a4ce2cf75d92f"
+            ]
+        ]
+    },
+    {
+        "id": "ef0a4b3a2627122b",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now it's raining",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "9c1f7d3acfbf0aa4",
+        "type": "world",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "action": "weather",
+        "x": 730,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c8a4ce2cf75d92f",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "rain",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "6002ec3789fcb3cd",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sun is there!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "0475d8f386149a1e",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "clear",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "d80e114ed8dd57d9",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather clear",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "0475d8f386149a1e",
+                "6002ec3789fcb3cd"
+            ]
+        ]
+    },
+    {
+        "id": "60bd7c715657a1fe",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!weather thunder",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 240,
+        "wires": [
+            [
+                "05035d2f7f120698",
+                "cbe5f5d8a2cff610"
+            ]
+        ]
+    },
+    {
+        "id": "05035d2f7f120698",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "thunder",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "9c1f7d3acfbf0aa4"
+            ]
+        ]
+    },
+    {
+        "id": "cbe5f5d8a2cff610",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "thunder is there",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "cf82df2a50584bb3",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!server status",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "5c354b702c45b28d"
+            ]
+        ]
+    },
+    {
+        "id": "5c354b702c45b28d",
+        "type": "serverinfo",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "6e908f638455f6d7"
+            ]
+        ]
+    },
+    {
+        "id": "6e908f638455f6d7",
+        "type": "template",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Server Status:\n Version: {{payload.version}}\n Online: {{payload.online}}/{{payload.max}}",
+        "output": "str",
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "97cf9c0f86702680",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "!resetcoords",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "a240044cbf412a14"
+            ]
+        ]
+    },
+    {
+        "id": "a240044cbf412a14",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "teleport @a 0 100 0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "495ef1e07796ba78"
+            ]
+        ]
+    },
+    {
+        "id": "495ef1e07796ba78",
+        "type": "rcon",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "command": "",
+        "x": 570,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2252dcdfacb86e0",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Teleported all players to 0 0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 440,
+        "wires": [
+            [
+                "b0d8f583fd8d086d"
+            ]
+        ]
+    },
+    {
+        "id": "0fb054c71dcb3303",
+        "type": "ui-text-input",
+        "z": "b652f1b6c9917e6b",
+        "group": "1dbeb3abfaac0858",
+        "name": "",
+        "label": "Time(Seconds)",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 240,
+        "y": 1240,
+        "wires": [
+            [
+                "2d5957a886faa5b2"
+            ]
+        ]
+    },
+    {
+        "id": "2d5957a886faa5b2",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "311110e9b24f3ecc",
+        "type": "ui-button",
+        "z": "b652f1b6c9917e6b",
+        "group": "1dbeb3abfaac0858",
+        "name": "",
+        "label": "start",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 250,
+        "y": 1320,
+        "wires": [
+            [
+                "d127d0bd322c046d"
+            ]
+        ]
+    },
+    {
+        "id": "d127d0bd322c046d",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "timer",
+        "func": "let time = flow.get(\"time\") || 0;\nif (time > 0) {\n    time--;\n    flow.set(\"time\", time);\n    msg.payload = time;\n    return [msg, msg]; \n} ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1320,
+        "wires": [
+            [
+                "9454125ad2d811ba",
+                "868fa96dd48412fb"
+            ]
+        ]
+    },
+    {
+        "id": "868fa96dd48412fb",
+        "type": "ui-text",
+        "z": "b652f1b6c9917e6b",
+        "group": "1dbeb3abfaac0858",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time left:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 600,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "9454125ad2d811ba",
+        "type": "delay",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 1320,
+        "wires": [
+            [
+                "d127d0bd322c046d"
+            ]
+        ]
+    },
+    {
+        "id": "8877b8cf168fcb59",
+        "type": "discordMessage",
+        "z": "b652f1b6c9917e6b",
+        "name": "pictures",
+        "channelIdFilter": "1493861619577520279",
+        "token": "",
+        "x": 150,
+        "y": 1420,
+        "wires": [
+            [
+                "5260a8a00eb72e09"
+            ]
+        ]
+    },
+    {
+        "id": "5260a8a00eb72e09",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "function 1",
+        "func": "// Check if there is an attachment\nif (msg.data && msg.data.attachments && msg.data.attachments.length > 0) {\n    // Get the URL of the first attachment\n    msg.payload = msg.data.attachments[0].url;\n    return msg;\n}\nreturn null; // Ignore messages without images",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1420,
+        "wires": [
+            [
+                "32c4b13b120f4066"
+            ]
+        ]
+    },
+    {
+        "id": "32c4b13b120f4066",
+        "type": "ui-template",
+        "z": "b652f1b6c9917e6b",
+        "group": "",
+        "page": "",
+        "ui": "74a42c30da0266ac",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div style=\"display: flex; justify-content: center; align-items: center; flex-direction: column;\">\n        <div v-if=\"!msg.payload\" style=\"padding: 20px; color: #888;\">\n            No image received from Discord\n        </div>\n        <img v-else :src=\"msg.payload\" style=\"max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);\" />\n    </div>\n</template>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 500,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4aa1e46f7f782ba1",
+        "type": "cpu",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 250,
+        "y": 1500,
+        "wires": [
+            [
+                "f1e4dc04c4dd96ac"
+            ]
+        ]
+    },
+    {
+        "id": "2b88f7ccb4e0a418",
+        "type": "inject",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "props": [],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 60,
+        "y": 1500,
+        "wires": [
+            [
+                "4aa1e46f7f782ba1"
+            ]
+        ]
+    },
+    {
+        "id": "f1e4dc04c4dd96ac",
+        "type": "ui-chart",
+        "z": "b652f1b6c9917e6b",
+        "group": "1dbeb3abfaac0858",
+        "name": "",
+        "label": "chart",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "%",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "5",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 450,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f3f6b48e8b99fd1",
+        "type": "discordMessage",
+        "z": "b652f1b6c9917e6b",
+        "name": "mc",
+        "channelIdFilter": "1506214515849560105",
+        "token": "",
+        "x": 170,
+        "y": 900,
+        "wires": [
+            [
+                "ca261a1c2abf4ea7"
+            ]
+        ]
+    },
+    {
+        "id": "ca261a1c2abf4ea7",
+        "type": "switch",
+        "z": "b652f1b6c9917e6b",
+        "name": "command",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "!start.*",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 900,
+        "wires": [
+            [
+                "87aa7af80c0eb751"
+            ]
+        ]
+    },
+    {
+        "id": "5b78f5130ab59cc1",
+        "type": "rcon",
+        "z": "b652f1b6c9917e6b",
+        "name": "rcon",
+        "server": "8578630036ab0527",
+        "command": "",
+        "x": 930,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87aa7af80c0eb751",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "split command",
+        "func": "let text = \"\";\nif (typeof msg.payload === 'string') {\n    text = msg.payload;\n} else if (msg.payload && typeof msg.payload.content === 'string') {\n    text = msg.payload.content;\n}\n\nlet matchItem = text.match(/\\{([^}]+)\\}/);\nlet matchTime = text.match(/\\|([^|]+)\\|/);\n\nif (matchItem && matchTime) {\n    let minutes = parseInt(matchTime[1].trim());\n    flow.set(\"searchItem\", matchItem[1].trim());\n    flow.set(\"givenTime\", minutes);\n    flow.set(\"time\", minutes); // <-- THIS is what was missing\n\n    msg.payload = matchItem[1].trim();\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 900,
+        "wires": [
+            [
+                "a1fd8c565dc2c5b7",
+                "45d8479ee7d2663b",
+                "6aa4d1fb5f9b126f"
+            ]
+        ]
+    },
+    {
+        "id": "a1fd8c565dc2c5b7",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "item",
+        "func": "msg.payload = \"say Items to find: \" + msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 880,
+        "wires": [
+            [
+                "5b78f5130ab59cc1"
+            ]
+        ]
+    },
+    {
+        "id": "45d8479ee7d2663b",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "set payload to time",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "givenTime",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 940,
+        "wires": [
+            [
+                "03dd22e4f427bb16",
+                "5b4bb6ead12c3dc7"
+            ]
+        ]
+    },
+    {
+        "id": "03dd22e4f427bb16",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "time",
+        "func": "msg.payload = \"say Time you got: \" + msg.payload + \" min\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 940,
+        "wires": [
+            [
+                "5b78f5130ab59cc1"
+            ]
+        ]
+    },
+    {
+        "id": "5b4bb6ead12c3dc7",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "countdown",
+        "func": "let time = flow.get(\"time\") || 0;\n\nif (time > 0) {\n    time--;\n    flow.set(\"time\", time);\n    msg.payload = time;\n    if (time === 0) {\n        return [null, msg];\n    } else {\n        return [msg, null];\n    }\n} else {\n    return [null, null];\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 1040,
+        "wires": [
+            [
+                "489c4fc58e139c72",
+                "38ba1b8a84fde290"
+            ],
+            [
+                "54f6fe43a346faf7"
+            ]
+        ]
+    },
+    {
+        "id": "489c4fc58e139c72",
+        "type": "delay",
+        "z": "b652f1b6c9917e6b",
+        "name": "delay",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 1120,
+        "wires": [
+            [
+                "5b4bb6ead12c3dc7"
+            ]
+        ]
+    },
+    {
+        "id": "38ba1b8a84fde290",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "time left",
+        "func": "let time = msg.payload;\nif (time === 1) {\n    msg.payload = \"say 1 minute remaining!\";\n} else {\n    msg.payload = \"say \" + time + \" minutes remaining!\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 1040,
+        "wires": [
+            [
+                "5b78f5130ab59cc1"
+            ]
+        ]
+    },
+    {
+        "id": "54f6fe43a346faf7",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "time 0",
+        "func": "\nmsg.payload = \"say Time up\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1120,
+        "wires": [
+            [
+                "5b78f5130ab59cc1",
+                "166c871e167d871c"
+            ]
+        ]
+    },
+    {
+        "id": "77d4997bd3dc81d0",
+        "type": "block",
+        "z": "b652f1b6c9917e6b",
+        "name": "block",
+        "server": "8578630036ab0527",
+        "action": "set",
+        "x": 310,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2e7a12f2ac95cc5",
+        "type": "debug",
+        "z": "b652f1b6c9917e6b",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "6aa4d1fb5f9b126f",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "make block",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "-95 65 -12|chest",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 110,
+        "y": 980,
+        "wires": [
+            [
+                "77d4997bd3dc81d0",
+                "f2e7a12f2ac95cc5"
+            ]
+        ]
+    },
+    {
+        "id": "166c871e167d871c",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "get block",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "-95 65 -12",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 1120,
+        "wires": [
+            [
+                "dad042a516359cfc"
+            ]
+        ]
+    },
+    {
+        "id": "dad042a516359cfc",
+        "type": "block",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "server": "8578630036ab0527",
+        "action": "info",
+        "x": 1170,
+        "y": 1120,
+        "wires": [
+            [
+                "ccdadcd02ddb67b1",
+                "53377ef43cdbc5af"
+            ]
+        ]
+    },
+    {
+        "id": "ccdadcd02ddb67b1",
+        "type": "debug",
+        "z": "b652f1b6c9917e6b",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1280,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "53377ef43cdbc5af",
+        "type": "function",
+        "z": "b652f1b6c9917e6b",
+        "name": "if item in chest",
+        "func": "let searchItem = flow.get(\"searchItem\") || \"\";\nlet contents = \"\";\n\nif (msg.payload && typeof msg.payload === \"object\") {\n    contents = JSON.stringify(msg.payload);\n}\n\nif (searchItem && contents.toLowerCase().includes(searchItem.toLowerCase())) {\n    return [msg, null];\n} else {\n    return [null, msg]; // output 2: item not found\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1160,
+        "wires": [
+            [
+                "5d94993e81a7e645"
+            ],
+            [
+                "bc9bccfe861893c1"
+            ]
+        ]
+    },
+    {
+        "id": "5d94993e81a7e645",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "say u found it",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 1060,
+        "wires": [
+            [
+                "5b78f5130ab59cc1"
+            ]
+        ]
+    },
+    {
+        "id": "bc9bccfe861893c1",
+        "type": "change",
+        "z": "b652f1b6c9917e6b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "say u didnt found it",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1072.199951171875,
+        "y": 1194.4000244140625,
+        "wires": [
+            [
+                "5b78f5130ab59cc1"
+            ]
+        ]
+    },
+    {
+        "id": "8578630036ab0527",
+        "type": "serverconfig",
+        "host": "minecraft",
+        "rconPort": 25575,
+        "rconPassword": "flip123"
+    },
+    {
+        "id": "1dbeb3abfaac0858",
+        "type": "ui-group",
+        "name": "Teinf project",
+        "page": "7f921b125e6ea86f",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "74a42c30da0266ac",
+        "type": "ui-base",
+        "name": "Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "7f921b125e6ea86f",
+        "type": "ui-page",
+        "name": "Teinf Project",
+        "ui": "74a42c30da0266ac",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "b119a7155a315cfb",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b119a7155a315cfb",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "7576243ead38f127",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-discord-updated": "4.1.0",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7",
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-contrib-cpu": "0.0.4"
+        }
+    }
+]
